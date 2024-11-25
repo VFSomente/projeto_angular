@@ -1,0 +1,81 @@
+<div class="banner">
+  <div class="banner-content">
+    <img class="banner-img" src="/assets/img/img1.png" alt="" />
+    <h1>Revele sua beleza única, brilhe do seu jeito!</h1>
+    <button class="buy-button">COMPRE AQUI ></button>
+  </div>
+</div>
+<br />
+<br />
+
+<div class="favorites">
+  <h2>SEUS FAVORITOS</h2>
+  <div class="products">
+    <div class="product1">
+      <img src="../../assets/img2.png" alt="v" />
+      <p>Paleta de Sombras<br /><span>Frescor e Leveza</span></p>
+    </div>
+    <div class="product2">
+      <img src="../../assets/img/img3.png" alt="aa" />
+      <p>Base Líquida<br /><span>Doçura</span></p>
+    </div>
+    <div class="product3">
+      <img src="../../assets/img/img4.png" alt="aa" />
+      <p>Brilho Labial<br /><span>Me Nota</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="logo">MG M A K E</div>
+  <input
+    type="text"
+    class="search-bar"
+    placeholder="Digite o que você procura..."
+  />
+  <div class="nav-icons">
+    <span>Meus Pedidos</span>
+    <span>Entre ou Cadastre-se</span>
+    <span>Carrinho</span>
+  </div>
+</div>
+
+<div class="banner3">
+  <img src="../../assets/img/img5.png" alt="Banner Promocional" />
+</div>
+
+<div class="recommended">
+  <h2>Recomendados para Você</h2>
+  <div class="products">
+    <app-produtos
+      *ngFor="let product of products"
+      [product]="product"
+      (cardClick)="onProductClick($event)">
+    </app-produtos>
+  </div>
+  
+
+<div class="footer-container">
+  <div class="footer-image1">
+    <img
+      src="../../assets/img/img17.png"
+      alt="Imagem de produtos de maquiagem"
+    />
+  </div>
+
+  <div class="footer-text">
+    <h2>VOLTE SEMPRE!</h2>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a href="https://twitter.com" target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a href="https://instagram.com" target="_blank"
+        ><i class="fab fa-instagram"></i
+      ></a>
+    </div>
+    <p>MG_make<br />(xx) x xxxx-xxxx</p>
+  </div>
+</div>
