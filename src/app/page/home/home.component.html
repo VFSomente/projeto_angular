@@ -46,14 +46,29 @@
 
 <div class="recommended">
   <h2>Recomendados para Você</h2>
-  <div class="products">
-    <app-produtos
+
+  <!-- Produtos listados -->
+  <div class="produtosRecomendados">
+    <app-produtos 
       *ngFor="let product of products"
       [product]="product"
-      (cardClick)="onProductClick($event)">
+      (cardClick)="onProductClick(product)">
     </app-produtos>
   </div>
-  
+
+  <!-- Popup para detalhes do produto -->
+  <div class="popup" *ngIf="selectedProduct">
+    <div class="popup-overlay" (click)="closePopup()"></div>
+    <div class="popup-content">
+      <span class="close" (click)="closePopup()">×</span>
+      <img [src]="selectedProduct.image" [alt]="selectedProduct.name" />
+      <h3>{{ selectedProduct.name }}</h3>
+      <p>{{ selectedProduct.brand }}</p>
+      <p class="price">{{ selectedProduct.price }}</p>
+      <button class="buy-button"> Comprar </button>
+    </div>
+  </div>
+</div>
 
 <div class="footer-container">
   <div class="footer-image1">
@@ -66,15 +81,9 @@
   <div class="footer-text">
     <h2>VOLTE SEMPRE!</h2>
     <div class="social-links">
-      <a href="https://facebook.com" target="_blank"
-        ><i class="fab fa-facebook"></i
-      ></a>
-      <a href="https://twitter.com" target="_blank"
-        ><i class="fab fa-twitter"></i
-      ></a>
-      <a href="https://instagram.com" target="_blank"
-        ><i class="fab fa-instagram"></i
-      ></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
     <p>MG_make<br />(xx) x xxxx-xxxx</p>
   </div>

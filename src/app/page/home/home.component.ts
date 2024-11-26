@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ProdutosComponent } from "../../components/produtos/produtos.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +11,9 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
-  constructor(private router: Router) {} 
-  onProductClick(productId: number): void {
-    this.router.navigate(['/detalhe', productId]);
-  }
-
+  
+  selectedProduct: any = null;
+  
 
   products = [
     {
@@ -106,4 +102,14 @@ export class HomeComponent {
     }
   ];
   
+
+  // Exibe o popup com o produto selecionado
+  onProductClick(product: any): void {
+    this.selectedProduct = product;
+  }
+
+  // Fecha o popup
+  closePopup(): void {
+    this.selectedProduct = null;
+  }
 }

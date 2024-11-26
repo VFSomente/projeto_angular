@@ -11,10 +11,10 @@ export class ProdutosComponent {
 
   @Input() product!: {
     id: number;
-    image: string;
-    brand: string;
-    name: string;
-    price: string;
+    image: String;
+    brand: String;
+    name: String;
+    price: String;
   };
 
   @Output() cardClick = new EventEmitter<number>();
